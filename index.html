@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Me dá dinheiro? - Formulário de Entrada</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  #container {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: white;
+    color: blue;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: blue;
+    color: white;
+  }
+
+  #nameForm {
+    margin-top: 20px;
+  }
+
+  #nameInput {
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+  }
+
+  #nameSubmit {
+    margin-top: 10px;
+    background-color: white;
+    color: blue;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  }
+
+  #nameSubmit:hover {
+    background-color: blue;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<div id="container">
+  <h2>Informe seu nome:</h2>
+  <form id="nameForm">
+    <input type="text" id="nameInput" required>
+    <button type="submit" id="nameSubmit">Enviar</button>
+  </form>
+</div>
+<script>
+  const nameForm = document.getElementById("nameForm");
+  const nameInput = document.getElementById("nameInput");
+
+  nameForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = nameInput.value;
+    localStorage.setItem("username", name);
+    window.location.href = "namoro.html";
+  });
+</script>
+</body>
+</html>
